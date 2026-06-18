@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photovoltaics Practice Problem Solutions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #000;
+            background-color: #fff;
+        }
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        h2 {
+            font-size: 20px;
+            font-weight: bold;
+            border: 2px solid #000;
+            padding: 10px;
+        }
+        .problem {
+            margin: 30px 0;
+        }
+        .problem-number {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .subproblem {
+            margin: 10px 0 10px 20px;
+        }
+        .equation {
+            text-align: center;
+            margin: 15px 0;
+            font-family: 'Times New Roman', serif;
+            font-size: 16px;
+        }
+        .solution {
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f0f0f0;
+            font-weight: bold;
+        }
+        .calculation {
+            margin: 10px 0;
+            padding: 5px;
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <h1>Arizona State University<br>
+    School of Electrical, Computer and Energy Engineering</h1>
+    
+    <h2>EEE 465/591: Photovoltaics Energy Conversion<br>
+    Practice Problem Set #1 - Solutions</h2>
+    
+    <p style="text-align: center; font-weight: bold; margin-bottom: 30px;">Saif Elsaady</p>
+
+    <div class="problem">
+        <div class="problem-number">1. Unit Classification</div>
+        <p>Identify if each of the following are a unit of energy, power or other:</p>
+        
+        <div class="solution">
+            <div class="subproblem"><strong>a. Watts</strong> → <em>Power</em> (P = W)</div>
+            <div class="subproblem"><strong>b. Joules</strong> → <em>Energy</em> (E = J)</div>
+            <div class="subproblem"><strong>c. Watt-hours</strong> → <em>Energy</em> (E = W×h = J)</div>
+            <div class="subproblem"><strong>d. Quad</strong> → <em>Energy</em> (1 Quad = 10¹⁵ BTU)</div>
+            <div class="subproblem"><strong>e. BTU</strong> → <em>Energy</em> (British Thermal Unit)</div>
+            <div class="subproblem"><strong>f. Horsepower</strong> → <em>Power</em> (1 HP ≈ 746 W)</div>
+        </div>
+    </div>
+
+    <div class="problem">
+        <div class="problem-number">2. Energy-Wavelength Conversions</div>
+        <p>Convert between energy and wavelength using the photon energy equation:</p>
+        
+        <div class="equation">
+            <strong>E = hc/λ</strong><br>
+            where h = 6.626 × 10⁻³⁴ J·s, c = 3 × 10⁸ m/s<br>
+            <strong>E(eV) = 1240/λ(nm)</strong> (convenient form)
+        </div>
+
+        <div class="solution">
+            <div class="subproblem">
+                <strong>a. 1 eV → wavelength</strong>
+                <div class="calculation">
+                    λ = 1240/E = 1240/1 = <strong>1240 nm</strong>
+                </div>
+            </div>
+
+            <div class="subproblem">
+                <strong>b. 405 nm → energy</strong>
+                <div class="calculation">
+                    E = 1240/λ = 1240/405 = <strong>3.06 eV</strong>
+                </div>
+            </div>
+
+            <div class="subproblem">
+                <strong>c. 0.5 micron = 500 nm → energy</strong>
+                <div class="calculation">
+                    E = 1240/500 = <strong>2.48 eV</strong>
+                </div>
+            </div>
+
+            <div class="subproblem">
+                <strong>d. 2.2 eV → wavelength</strong>
+                <div class="calculation">
+                    λ = 1240/2.2 = <strong>564 nm</strong>
+                </div>
+            </div>
+
+            <div class="subproblem">
+                <strong>e. 600 nm → energy</strong>
+                <div class="calculation">
+                    E = 1240/600 = <strong>2.07 eV</strong>
+                </div>
+            </div>
+
+            <div class="subproblem">
+                <strong>f. Si bandgap at 300K ≈ 1.12 eV → wavelength</strong>
+                <div class="calculation">
+                    λ = 1240/1.12 = <strong>1107 nm</strong>
+                </div>
+            </div>
+
+            <div class="subproblem">
+                <strong>g. GaAs bandgap at 300K ≈ 1.42 eV → wavelength</strong>
+                <div class="calculation">
+                    λ = 1240/1.42 = <strong>873 nm</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="problem">
+        <div class="problem-number">3. Monochromatic Light Source Parameters</div>
+        <p>Fill in the missing parameters using the relationship between photon energy, flux, and power density:</p>
+        
+        <div class="equation">
+            <strong>Power Density = Photon Energy × Photon Flux</strong><br>
+            <strong>P = E × Φ</strong>
+        </div>
+
+        <table>
+            <tr>
+                <th>Photon Energy</th>
+                <th>Photon Flux</th>
+                <th>Power Density</th>
+            </tr>
+            <tr>
+                <td>1.43 eV</td>
+                <td>1 × 10¹⁹ photons m⁻²s⁻¹</td>
+                <td><strong>229 W/m²</strong></td>
+            </tr>
+            <tr>
+                <td>1.12 eV</td>
+                <td><strong>4.46 × 10²¹ photons m⁻²s⁻¹</strong></td>
+                <td>800 W/m²</td>
+            </tr>
+            <tr>
+                <td><strong>1.25 eV</strong></td>
+                <td>5 × 10²¹ photons m⁻²s⁻¹</td>
+                <td>1000 W/m²</td>
+            </tr>
+        </table>
+
+        <div class="solution">
+            <div class="calculation">
+                <strong>Row 1 calculation:</strong><br>
+                P = E × Φ = 1.43 eV × 1 × 10¹⁹ photons/m²s<br>
+                P = 1.43 × 1.602 × 10⁻¹⁹ J × 1 × 10¹⁹ /m²s = <strong>229 W/m²</strong>
+            </div>
+
+            <div class="calculation">
+                <strong>Row 2 calculation:</strong><br>
+                Φ = P/E = 800 W/m² ÷ (1.12 × 1.602 × 10⁻¹⁹ J)<br>
+                Φ = 800 ÷ (1.794 × 10⁻¹⁹) = <strong>4.46 × 10²¹ photons m⁻²s⁻¹</strong>
+            </div>
+
+            <div class="calculation">
+                <strong>Row 3 calculation:</strong><br>
+                E = P/Φ = 1000 W/m² ÷ (5 × 10²¹ photons/m²s)<br>
+                E = 2 × 10⁻¹⁹ J = 2 × 10⁻¹⁹ ÷ 1.602 × 10⁻¹⁹ = <strong>1.25 eV</strong>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
