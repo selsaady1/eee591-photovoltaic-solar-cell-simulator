@@ -3,17 +3,19 @@
 <title>Solar-Cell Simulator — Saif Elsaady</title><style>
 :root{--bg:#0d1117;--card:#161b22;--bd:#30363d;--fg:#e6edf3;--mut:#8b949e;--ac:#58a6ff;--mar:#8c1d40}
 *{box-sizing:border-box}body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6}
-a{color:var(--ac);text-decoration:none}.wrap{max-width:860px;margin:0 auto;padding:24px}
+a{color:var(--ac);text-decoration:none}.wrap{max-width:880px;margin:0 auto;padding:24px}
 .top{padding:14px 24px;border-bottom:1px solid var(--bd);font-size:.9rem}
-.hero{padding:40px 24px 8px;max-width:860px;margin:0 auto}
+.hero{padding:38px 24px 6px;max-width:880px;margin:0 auto}
 .cat{display:inline-block;background:var(--mar);color:#fff;font-size:.72rem;padding:3px 10px;border-radius:999px;letter-spacing:.04em}
 h1{margin:.4rem 0 .3rem;font-size:2rem}.tag{color:var(--mut);font-size:1.1rem;margin:0 0 14px}
 .metric{display:inline-block;background:#13241a;border:1px solid #1f6f43;color:#3fb950;padding:6px 14px;border-radius:8px;font-weight:700;margin:6px 0}
-.hero-img{margin:18px 0;border:1px solid var(--bd);border-radius:12px;overflow:hidden;max-height:380px;display:flex;justify-content:center;background:#0a0d12}
-.hero-img img{max-width:100%;object-fit:contain}
+.hero-img{margin:18px auto;border:1px solid var(--bd);border-radius:12px;overflow:hidden;max-width:880px;background:#0a0d12;display:flex;justify-content:center}
+.hero-img img{max-width:100%;max-height:460px;object-fit:contain}
 h2{font-size:1.15rem;border-left:4px solid var(--mar);padding-left:10px;margin-top:30px}
 ul{padding-left:20px}li{margin:6px 0}
 .chips{display:flex;flex-wrap:wrap;gap:8px}.chip{background:var(--card);border:1px solid var(--bd);border-radius:999px;padding:4px 12px;font-size:.85rem}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:12px}
+.gal img{width:100%;border:1px solid var(--bd);border-radius:8px;background:#0a0d12}
 .btns{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0}
 .btn{background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:10px 16px;font-weight:600}
 .btn:hover{border-color:var(--ac)}.btn.primary{background:var(--ac);color:#06101f;border-color:var(--ac)}
@@ -21,12 +23,16 @@ footer{color:var(--mut);font-size:.82rem;border-top:1px solid var(--bd);margin-t
 </style></head><body>
 <div class="top"><a href="https://selsaady1.github.io/portfolio/">← Portfolio</a> · <a href="https://github.com/selsaady1">github.com/selsaady1</a></div>
 <div class="hero"><span class="cat">Energy &amp; Power</span><h1>Solar-Cell Simulator</h1>
-<p class="tag">Python photovoltaic toolkit: silicon cell device physics plus PV-battery techno-economics.</p><div class="metric">13.28% cell efficiency</div><div class="hero-img"><img src="images/plot1_energy_flow.png" alt=""></div></div>
+<p class="tag">Python photovoltaic toolkit: silicon cell device physics plus PV-battery techno-economics.</p><div class="metric">13.28% cell efficiency</div></div>
+<div class="wrap" style="padding-top:0"><div class="hero-img"><img src="images/fig1.png" alt=""></div></div>
 <div class="wrap">
-<h2>Overview</h2><p>A coursework project (ASU EEE 465/591, Photovoltaic Energy Conversion) bundling two Python photovoltaic studies. The first is a first-principles silicon solar-cell simulator that computes absorption, quantum efficiency, dark/light currents, series resistance, and the IV curve, then sweeps emitter design to maximize efficiency. The second is an 8,760-hour techno-economic simulation of a residential 5 kW PV plus 14 kWh battery system, comparing net metering against net billing under Salt River Project time-of-use rates.</p>
+<h2>Overview</h2><p>A coursework project (ASU EEE 465/591, Photovoltaic Energy Conversion) bundling two Python photovoltaic studies. The first is a first-principles silicon solar-cell simulator that computes absorption, quantum efficiency, dark/light currents, series resistance, and the IV curve, then sweeps emitter design to maximize efficiency. The second is an 8,760-hour techno-economic simulation of a residential 5 kW PV plus 14 kWh battery system, comparing net metering against net billing under Salt River Project time-of-use rates.
+
+**Highlight:** 13.28% cell efficiency</p>
 <h2>Key Achievements</h2><ul><li>Built a silicon solar-cell device simulator computing alpha(lambda), internal quantum efficiency, dark saturation current J0 (split emitter/base), light-generated current JL, and series resistance, extracting Jsc 24.3 mA/cm2, Voc 0.668 V, FF 0.817, and efficiency ~13.28% under 1-sun</li><li>Validated outputs against reference (Appendix A) values, matching sheet resistivity and series resistance to within rounding and J0 to within a few percent</li><li>Ran an exhaustive grid search over emitter doping (Ne) and thickness (We) to maximize cell efficiency, balancing Auger-limited lifetime, sheet resistance, and recombination</li><li>Simulated a 5 kW PV + 14 kWh battery home over 8,760 hours with SRP time-of-use rates, modeling battery dispatch (10-100% SOC) and computing annual bills, NPV, LCOE, and payback</li><li>Quantified net metering vs net billing: $892.78 vs $920.72 annual cost, 15.1 vs 15.6-year payback, NPV of -$7,572 vs -$8,059, identical LCOE of $0.0956/kWh, with a battery-cost sensitivity sweep ($225/$300/$375 per kWh)</li></ul>
 <h2>Approach</h2><p>Both simulators are written in Python using NumPy, pandas, and Matplotlib. The cell simulator implements solar-cell device equations (Auger lifetime model, diffusion lengths, IQE integration, busbar-limited series resistance, diode IV) and integrates measured AM1.5G/absorption tables on a 10-nm grid. The techno-economic model ingests hourly load and PV CSV profiles (8,760 rows), applies a three-season TOU rate structure and battery dispatch logic, and uses standard financial functions (NPV discounting, capital recovery, geometric-series O&amp;M growth, scheduled battery replacements) over a 25-year, 3%-discount horizon.</p>
 <h2>Tools &amp; Technologies</h2><div class="chips"><span class="chip">Python</span><span class="chip">NumPy</span><span class="chip">pandas</span><span class="chip">Matplotlib</span></div>
+<h2>Gallery</h2><div class="gal"><a href="images/fig2.png"><img src="images/fig2.png" loading="lazy" alt=""></a><a href="images/fig3.png"><img src="images/fig3.png" loading="lazy" alt=""></a><a href="images/fig4.png"><img src="images/fig4.png" loading="lazy" alt=""></a><a href="images/fig5.png"><img src="images/fig5.png" loading="lazy" alt=""></a><a href="images/fig6.png"><img src="images/fig6.png" loading="lazy" alt=""></a></div>
 <h2>Results</h2><p>The cell simulator reports Jsc 24.3 mA/cm2, Voc 0.668 V, FF 0.817, and ~13.28% efficiency, with figures-of-merit matched against Appendix A references. The techno-economic study finds both billing policies cut the $1,832.55 baseline bill by roughly 50% yet yield negative 25-year NPVs (-$7,572 net metering, -$8,059 net billing) and 15+ year paybacks under current Arizona rates. Full details are in docs/EEE591_Project_Paper.docx and docs/EEE 465_591 - Solar Cell Mini Project #2 (Saif Elsaady).pdf.</p>
 <div class="btns"><a class="btn primary" href="https://github.com/selsaady1/eee591-photovoltaic-solar-cell-simulator">⌨ View source on GitHub</a><a class="btn" href="https://github.com/selsaady1/eee591-photovoltaic-solar-cell-simulator/blob/main/docs/EEE591_Project_Paper.docx">📄 View deliverable</a><a class="btn" href="https://selsaady1.github.io/portfolio/">All projects</a></div>
 </div>

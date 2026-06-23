@@ -4,10 +4,14 @@
 
 ![Python](https://img.shields.io/badge/Python-0a7?style=flat-square) ![NumPy](https://img.shields.io/badge/NumPy-0a7?style=flat-square) ![pandas](https://img.shields.io/badge/pandas-0a7?style=flat-square) ![Matplotlib](https://img.shields.io/badge/Matplotlib-0a7?style=flat-square) 
 
+![Solar-Cell Simulator](images/fig1.png)
+
 ### 🌐 Live project page → **https://selsaady1.github.io/eee591-photovoltaic-solar-cell-simulator/**
 
 ## Overview
 A coursework project (ASU EEE 465/591, Photovoltaic Energy Conversion) bundling two Python photovoltaic studies. The first is a first-principles silicon solar-cell simulator that computes absorption, quantum efficiency, dark/light currents, series resistance, and the IV curve, then sweeps emitter design to maximize efficiency. The second is an 8,760-hour techno-economic simulation of a residential 5 kW PV plus 14 kWh battery system, comparing net metering against net billing under Salt River Project time-of-use rates.
+
+**Highlight:** 13.28% cell efficiency
 
 **Highlight:** 13.28% cell efficiency
 
@@ -27,9 +31,16 @@ Both simulators are written in Python using NumPy, pandas, and Matplotlib. The c
 - pandas
 - Matplotlib
 
+## Gallery
+![figure](images/fig2.png)
+![figure](images/fig3.png)
+![figure](images/fig4.png)
+![figure](images/fig5.png)
+
 ## Repository Structure
 ```
 .gitignore
+.nojekyll
 LICENSE
 README.md
 data/703080TYA.CSV
@@ -51,12 +62,19 @@ docs/EEE591_Project_Paper.docx
 docs/Elsaady_EEE591_Project1.docx
 docs/PracticeProblem1_Elsaady_EEE591.html
 docs/solar_project_report.html
+images/fig1.png
+images/fig2.png
+images/fig3.png
+images/fig4.png
+images/fig5.png
+images/fig6.png
 images/plot1_energy_flow.png
 images/plot2_battery_soc.png
 images/plot3_annual_bills.png
 images/plot4_economics.png
 images/plot5_sensitivity.png
 images/pv_battery_analysis_results.png
+index.html
 src/Code snip for arrays for day number hour of the day and month.py
 src/Code snip for electricity rate and cost calculations.py
 src/Code snip for financial functions with example.py
